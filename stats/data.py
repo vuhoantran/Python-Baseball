@@ -6,7 +6,7 @@ import pandas as pd
 game_files = glob.glob(os.path.join(os.getcwd(),'games', '*.EVE'))
 
 # Sorting File Names
-list.sort(game_files)
+game_files.sort()
 
 # Append Game Frames
 game_frames = []
@@ -20,7 +20,7 @@ for game_file in game_files:
 games = pd.concat(game_frames)
 
 # Clean Values
-games.loc[games['multi5'] == '??'] = ''
+games.loc[games['multi5'] == '??', ['multi5']] = ''
 
 # Extract Identifiers
 identifiers = games['multi2'].str.extract(r'(.LS(\d{4})\d{5})')
@@ -41,4 +41,4 @@ games = games.fillna(' ')
 games.loc[:, 'type'] = pd.Categorical(games.loc[:, 'type'], categories=['info', 'start', 'play', 'com', 'sub', 'data'])
 
 # Print DataFrame
-games.head(5)
+print(games.head(5))
