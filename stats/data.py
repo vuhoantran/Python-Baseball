@@ -38,7 +38,7 @@ games = pd.concat([games, identifiers], axis=1, sort=False)
 games = games.fillna(' ')
 
 # Categorical Event Type
-games.loc[:, 'type'] = pd.Categorical(games.loc[:, 'type'], categories=['info', 'start', 'play', 'com', 'sub', 'data'])
+games.loc[:, ['type']] = pd.Categorical(games.loc[:, ['type']], categories=['info', 'start', 'play', 'com', 'sub', 'data'])
 
 # Print DataFrame
 print(games.head(5))
