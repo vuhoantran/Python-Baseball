@@ -3,7 +3,7 @@ import glob
 import pandas as pd
 
 # Python File Management
-game_files = glob.glob(os.path.join(os.getcwd(),'games', '*.EVE'))
+game_files = glob.glob(os.path.join(os.getcwd(), 'games', '*.EVE'))
 
 # Sorting File Names
 game_files.sort()
