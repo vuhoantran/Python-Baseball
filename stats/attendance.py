@@ -21,8 +21,7 @@ plt.xlabel('Year')
 plt.ylabel('Attendance')
 
 # Mean Line
-mean = attendance['attendance'].mean()
-plt.axhline(y=mean, label='mean', color='green', linestyle='--')
+plt.axhline(y=attendance['attendance'].mean(), label='mean', color='green', linestyle='--')
 
 plt.legend()
 
