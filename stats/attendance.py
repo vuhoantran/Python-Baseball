@@ -11,7 +11,7 @@ attendance = games.loc[(games['type'] == 'info') & (games['multi2'] == 'attendan
 attendance.columns = ['year', 'attendance']
 
 # Convert to Numeric
-attendance.loc[:,'attendance'] = pd.to_numeric(attendance.loc[:,'attendance'])
+attendance.loc[:, 'attendance'] = pd.to_numeric(attendance.loc[:, 'attendance'])
 
 # Plot DataFrame
 attendance.plot(x='year', y='attendance', figsize=(15, 7), kind='bar')
@@ -21,9 +21,7 @@ plt.xlabel('Year')
 plt.ylabel('Attendance')
 
 # Mean Line
-plt.axhline(y=attendance['attendance'].mean(), label='mean', color='green', linestyle='--')
-
-plt.legend()
+plt.axhline(y=attendance['attendance'].mean(), label='Mean', color='green', linestyle='--')
 
 plt.show()
 
