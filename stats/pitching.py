@@ -10,7 +10,7 @@ plays = games[games['type'] == 'play']
 strike_outs = plays[plays['event'].str.contains('K')]
 
 # Group by Year and Game
-strike_outs = strike_outs.groupby(['game_id', 'year']).size()
+strike_outs = strike_outs.groupby(['year', 'game_id']).size()
 
 # Reset Index
 strike_outs = strike_outs.reset_index(name='strike_outs')
