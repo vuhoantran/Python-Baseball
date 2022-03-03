@@ -19,7 +19,7 @@ strike_outs = strike_outs.reset_index(name='strike_outs')
 strike_outs = strike_outs.loc[:, ['year', 'strike_outs']].apply(pd.to_numeric)
 
 # Change Plot Formatting
-strike_outs.plot(x='year', y='strike_outs', label='Strike Outs', kind='scatter').legend()
+strike_outs.plot(x='year', y='strike_outs', kind='scatter').legend(['Strike Outs'])
 
 plt.show()
 
