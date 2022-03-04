@@ -31,7 +31,7 @@ hits = hits.assign(hit_type=hit_type)
 hits = hits.groupby(['inning', 'hit_type']).size().reset_index(name='count')
 
 # Convert Hit Type to Categorical
-pd.Categorical(hits['hit_type'], ['single', 'double', 'triple', 'hr'])
+hits['hit_type'] = pd.Categorical(hits['hit_type'], ['single', 'double', 'triple', 'hr'])
 
 # Sort Values
 hits = hits.sort_values(by=['inning', 'hit_type'])
@@ -44,4 +44,4 @@ hits.plot.bar(stacked=True)
 
 plt.show()
 
-# print(hits.head(30))
+print(hits.head(30))
